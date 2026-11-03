@@ -48,7 +48,9 @@ function score(s,i){return s.scores.find(r=>r['评价维度']===dims[i])?.['敏�
 function metric(label,value,note,cls=''){return `<div class="metric ${cls}"><span>${label}</span><strong>${number(value)}</strong><small>${note}</small></div>`}
 function renderStats(){$('stats').innerHTML=`<strong>${sites.length.toLocaleString()}</strong><span>${tx('处文物资源','heritage sites')}</span><small>${tx('当前筛选','Filtered')} <b>${lastFound.length}</b> · ${tx('五类本体评价','5 assessment dimensions')}</small>`}
 function render(){
- document.querySelector('article').classList.toggle('is-empty',!selected);
+ const detailPanel=document.querySelector('article');
+ detailPanel.classList.toggle('is-empty',!selected);
+ detailPanel.classList.toggle('is-planning',!!selected&&tab==='plan');
  document.querySelectorAll('#list button').forEach(b=>{const on=selected?.id===b.dataset.site;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))});
  if(!selected){
  $('title').textContent='HERISK';$('title').removeAttribute('title');$('meta').innerHTML='';$('headlineScores').innerHTML='';
@@ -58,8 +60,11 @@ function render(){
  const category=i===undefined?tx('请选择风险类别','Select a risk category'):riskCategoryName();
  $('title').textContent=siteName(s);$('title').title=s.name;
  $('meta').innerHTML=`<span class="tag">${esc(s.id)}</span><span class="tag">${esc(districtLabel(s.district))}</span><span class="tag">${esc(heritageLabel(s.level))}</span>`;
+ if(tab==='plan'){
+  $('headlineScores').innerHTML=`<div class="plan-context-strip"><span>${tx('综合规划响应','Comprehensive response')}</span><b>${tx('五类本体风险','Five intrinsic risks')}</b><b>${tx('五类建筑群风险','Five group risks')}</b><b>${tx('待专家复核','Expert review pending')}</b></div>`;
+  renderPlanning(s,activeRisk);return
+ }
  $('headlineScores').innerHTML=`<div class="score-context">${category}</div><div class="headline-grid">${metric(tx('文物本体风险','Intrinsic risk'),i===undefined?null:score(s,i),tx('本体敏感性 · 1–5 分','Sensitivity · scale 1–5'))}${metric(tx('外部风险值','External risk value'),r?.risk_value,r?.risk_value==null?tx('暂无数据','No data available'):tx('当前风险类别 · risk_value','Current category · risk_value'),'external')}</div><div class="resilience-summary"><span>${tx('韧性值','Resilience')}</span><strong>${number(r?.R_value)}</strong><small>${(activeRisk==='opinion'?tx('该类数据未提供','Not supplied for this category'):tx('越高越好','Higher is better'))}</small></div>`;
- if(tab==='plan'){renderPlanning(s,activeRisk);return}
  if(tab==='risk'){
  const available=r?Object.entries(r.areas):[];
  $('detail').innerHTML=`<div class="risk-score-pair">${metric(tx('风险值','Risk value'),r?.risk_value,category+' · risk_value','group-score')}${metric(tx('韧性值','Resilience value'),r?.R_value,(activeRisk==='opinion'?tx('该类数据未提供韧性值','Resilience not supplied'):tx('越高越好 · R_value','Higher is better · R_value')),'resilience-score')}</div><p class="muted">${tx('风险值与韧性值为不同指标，不与本体 1–5 分量表直接比较。数值来自本次更新数据。','Risk and resilience are separate metrics, not directly comparable with intrinsic scores. Values use the current dataset.')}</p><h3>${tx('范围数据','Available extents')}</h3>${r?`<dl class="facts">${available.map(([kind,info])=>{const labels={basic_area:['基本范围建筑集合','Basic building set'],risk_area:['风险范围建筑集合','Risk building set'],R_same_area:['同级韧性建筑集合','Same-resilience set'],R_lower_area:['较低韧性建筑集合','Lower-resilience set'],basic_geometry:['基本边界线','Basic boundary'],risk_geometry:['风险边界线','Risk boundary'],R_geometry1:['同级韧性边界线','Same-resilience boundary'],R_geometry2:['较低韧性边界线','Lower-resilience boundary']};return `<dt>${tx(...labels[kind])}</dt><dd>${info.available?tx('已接入','Available'):tx('空范围','Empty extent')}</dd>`}).join('')}</dl><p class="muted">${tx('在地图左下角切换范围和显示方式。建筑集合可能同时包含建筑面与点节点。模型边界不等同于法定保护范围。','Switch extent and representation at the bottom-left of the map. Sets may contain polygon footprints and point nodes. Model extents are not statutory boundaries.')}</p>`:`<p class="empty-state">${tx('当前类别暂无该文物数据。','No data for this site and category.')}</p>`}`;return
