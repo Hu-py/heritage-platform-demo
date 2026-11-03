@@ -1,0 +1,353 @@
+[
+  {
+    "query": "施工振动 砖木建筑 监测",
+    "concepts": [
+      "concept:vibration",
+      "concept:monitoring",
+      "concept:timber",
+      "concept:masonry"
+    ],
+    "results": [
+      {
+        "title": "Damage and restoration technology of historic buildings of brick and wood structures: a review",
+        "pdf_page": 2,
+        "language": "en",
+        "citation": "chunk:21e14a15c2efe7b8fc8796af"
+      },
+      {
+        "title": "Damage and restoration technology of historic buildings of brick and wood structures: a review",
+        "pdf_page": 25,
+        "language": "en",
+        "citation": "chunk:03bb260d904f2fe019b4f77a"
+      },
+      {
+        "title": "上海历史风貌区保留历史建筑保护与管理路径探索_王林",
+        "pdf_page": 7,
+        "language": "zh",
+        "citation": "chunk:e86b8f281396cc9ce206b505"
+      },
+      {
+        "title": "以保护更新为导向的风貌区历史建筑价值评估与保护策略研究——以武夷路21街坊为例_俞菲",
+        "pdf_page": 2,
+        "language": "zh",
+        "citation": "chunk:e73a491653a4f2f1d2f959b7"
+      },
+      {
+        "title": "Methodology of Heritage Impact Assessment for World Heritage nominations: balancing impacts of the new Douro River bridge on Álvaro Siza’s Faculty of Architecture in Porto, Portugal",
+        "pdf_page": 20,
+        "language": "en",
+        "citation": "chunk:2f7f48fb8c0b8d4787bda103"
+      },
+      {
+        "title": "Methodology of Heritage Impact Assessment for World Heritage nominations: balancing impacts of the new Douro River bridge on Álvaro Siza’s Faculty of Architecture in Porto, Portugal",
+        "pdf_page": 13,
+        "language": "en",
+        "citation": "chunk:4aedbfde90aecb389856d576"
+      },
+      {
+        "title": "Air pollution and its impact on stone heritage sites: mechanisms and mathematical models",
+        "pdf_page": 10,
+        "language": "en",
+        "citation": "chunk:8cc959f38370cfaccf2d8120"
+      },
+      {
+        "title": "Principles for the Analysis, Conservation and Structural Restoration of Architectural Heritage",
+        "pdf_page": 22,
+        "language": "en",
+        "citation": "chunk:3aa0486e52ecca6efeb52695"
+      }
+    ],
+    "candidate_claims": 5
+  },
+  {
+    "query": "vibration monitoring timber",
+    "concepts": [
+      "concept:vibration",
+      "concept:monitoring",
+      "concept:timber"
+    ],
+    "results": [
+      {
+        "title": "Methodology of Heritage Impact Assessment for World Heritage nominations: balancing impacts of the new Douro River bridge on Álvaro Siza’s Faculty of Architecture in Porto, Portugal",
+        "pdf_page": 20,
+        "language": "en",
+        "citation": "chunk:2f7f48fb8c0b8d4787bda103"
+      },
+      {
+        "title": "Methodology of Heritage Impact Assessment for World Heritage nominations: balancing impacts of the new Douro River bridge on Álvaro Siza’s Faculty of Architecture in Porto, Portugal",
+        "pdf_page": 13,
+        "language": "en",
+        "citation": "chunk:4aedbfde90aecb389856d576"
+      },
+      {
+        "title": "Practice Note: Heritage and Sustainability—Built Heritage",
+        "pdf_page": 5,
+        "language": "en",
+        "citation": "chunk:bd8c9c5765c84ec5d8d02390"
+      },
+      {
+        "title": "Damage and restoration technology of historic buildings of brick and wood structures: a review",
+        "pdf_page": 2,
+        "language": "en",
+        "citation": "chunk:21e14a15c2efe7b8fc8796af"
+      },
+      {
+        "title": "Risk management and preventive conservation of historic buildings: The case of Karatay Madrasah (Museum)",
+        "pdf_page": 8,
+        "language": "en",
+        "citation": "chunk:5c969e54be3832a95cbf35e6"
+      },
+      {
+        "title": "Damage and restoration technology of historic buildings of brick and wood structures: a review",
+        "pdf_page": 19,
+        "language": "en",
+        "citation": "chunk:fde93004aa743df884c83a91"
+      },
+      {
+        "title": "Principles for the Analysis, Conservation and Structural Restoration of Architectural Heritage",
+        "pdf_page": 91,
+        "language": "en",
+        "citation": "chunk:6b99ed300198e99bc94432c5"
+      },
+      {
+        "title": "Principles for the Analysis, Conservation and Structural Restoration of Architectural Heritage",
+        "pdf_page": 95,
+        "language": "en",
+        "citation": "chunk:f2dbc57520955e228b2a6572"
+      }
+    ],
+    "candidate_claims": 5
+  },
+  {
+    "query": "真实性 最小干预",
+    "concepts": [
+      "concept:authenticity",
+      "concept:minimum_intervention"
+    ],
+    "results": [
+      {
+        "title": "文物保护项目评估规范",
+        "pdf_page": 10,
+        "language": "zh",
+        "citation": "chunk:0fc2fcfee58ef5173e399ebb"
+      },
+      {
+        "title": "中华人民共和国文物保护法（2024年修订，2025-03-01施行）",
+        "pdf_page": 13,
+        "language": "zh",
+        "citation": "chunk:a0f39737a8aba4c7d907067e"
+      },
+      {
+        "title": "Sustainable adaptive reuse of historic buildings: development of a framework from systematic review",
+        "pdf_page": 8,
+        "language": "en",
+        "citation": "chunk:7dbdea3012a604198fd0592c"
+      },
+      {
+        "title": "Sustainable adaptive reuse of historic buildings: development of a framework from systematic review",
+        "pdf_page": 7,
+        "language": "en",
+        "citation": "chunk:bc81acf12701316503648248"
+      },
+      {
+        "title": "中华人民共和国文物保护法（2024年修订，2025-03-01施行）",
+        "pdf_page": 15,
+        "language": "zh",
+        "citation": "chunk:fb4d268d4167bc99fbf220bd"
+      },
+      {
+        "title": "文物保护利用规范工业遗产",
+        "pdf_page": 15,
+        "language": "zh",
+        "citation": "chunk:0fae07378763ea2b8e046e8e"
+      },
+      {
+        "title": "GB 55035-2023 城乡历史文化保护利用项目规范（官方公开版）",
+        "pdf_page": 5,
+        "language": "zh",
+        "citation": "chunk:90ab1dc1f4c49699e359ffc5"
+      },
+      {
+        "title": "文物保护利用规范工业遗产",
+        "pdf_page": 10,
+        "language": "zh",
+        "citation": "chunk:fb00ab6af8bfcea45d3b6cdb"
+      }
+    ],
+    "candidate_claims": 3
+  },
+  {
+    "query": "authenticity minimum intervention",
+    "concepts": [
+      "concept:authenticity",
+      "concept:minimum_intervention"
+    ],
+    "results": [
+      {
+        "title": "Sustainable adaptive reuse of historic buildings: development of a framework from systematic review",
+        "pdf_page": 8,
+        "language": "en",
+        "citation": "chunk:7dbdea3012a604198fd0592c"
+      },
+      {
+        "title": "Sustainable adaptive reuse of historic buildings: development of a framework from systematic review",
+        "pdf_page": 7,
+        "language": "en",
+        "citation": "chunk:bc81acf12701316503648248"
+      },
+      {
+        "title": "中华人民共和国文物保护法（2024年修订，2025-03-01施行）",
+        "pdf_page": 13,
+        "language": "zh",
+        "citation": "chunk:a0f39737a8aba4c7d907067e"
+      },
+      {
+        "title": "文物保护项目评估规范",
+        "pdf_page": 10,
+        "language": "zh",
+        "citation": "chunk:0fc2fcfee58ef5173e399ebb"
+      },
+      {
+        "title": "Adaptive reuse of heritage buildings; a systematic literature review of success factors",
+        "pdf_page": 4,
+        "language": "en",
+        "citation": "chunk:aae84e3d20344094a543a7a3"
+      },
+      {
+        "title": "Historical heritage-MultiCriteria Decision Method (H-MCDM) to prioritize intervention strategies for the adaptive reuse of valuable architectural assets",
+        "pdf_page": 4,
+        "language": "en",
+        "citation": "chunk:22891ab8d80f3959095841ab"
+      },
+      {
+        "title": "A state-of-the-art review of key factors in risk assessment for preventive conservation of historic areas",
+        "pdf_page": 2,
+        "language": "en",
+        "citation": "chunk:e0cf7d249018cbf7b9f16ab5"
+      },
+      {
+        "title": "Risk management and preventive conservation of historic buildings: The case of Karatay Madrasah (Museum)",
+        "pdf_page": 1,
+        "language": "en",
+        "citation": "chunk:19a319641ff471064d7223f9"
+      }
+    ],
+    "candidate_claims": 3
+  },
+  {
+    "query": "游客承载量",
+    "concepts": [
+      "concept:visitor_pressure"
+    ],
+    "results": [
+      {
+        "title": "文物保护单位游客承载量评估规范",
+        "pdf_page": 14,
+        "language": "zh",
+        "citation": "chunk:700a60a2464a6ba027bc84f6"
+      },
+      {
+        "title": "文物保护单位游客承载量评估规范",
+        "pdf_page": 5,
+        "language": "zh",
+        "citation": "chunk:4d2a3bda929f69f5c07998d4"
+      },
+      {
+        "title": "中华人民共和国文物保护法（2024年修订，2025-03-01施行）",
+        "pdf_page": 14,
+        "language": "zh",
+        "citation": "chunk:e103e3b95955ef765cc32e97"
+      },
+      {
+        "title": "Risk management and preventive conservation of historic buildings: The case of Karatay Madrasah (Museum)",
+        "pdf_page": 10,
+        "language": "en",
+        "citation": "chunk:cbe4ca3710c56812a802c07a"
+      },
+      {
+        "title": "phoebus,+Knyazeva_1",
+        "pdf_page": 4,
+        "language": "en",
+        "citation": "chunk:40abfd9e54c3c0db228109ec"
+      },
+      {
+        "title": "Practice Note: Interpretation",
+        "pdf_page": 2,
+        "language": "en",
+        "citation": "chunk:f843740cbe253a25549c91f5"
+      },
+      {
+        "title": "Geospatial Tools for Determining Visitor Carrying Capacity in Tourist Streets and Public Spaces of Historic Centres",
+        "pdf_page": 12,
+        "language": "en",
+        "citation": "chunk:ef73ce2b4d59a248e36fd796"
+      },
+      {
+        "title": "Recommendation on the Historic Urban Landscape",
+        "pdf_page": 54,
+        "language": "zh",
+        "citation": "chunk:f0ce4a7d6555f8f86b3c98e6"
+      }
+    ],
+    "candidate_claims": 8
+  },
+  {
+    "query": "污染 石材 预防性保护",
+    "concepts": [
+      "concept:pollution",
+      "concept:preventive_conservation",
+      "concept:masonry"
+    ],
+    "results": [
+      {
+        "title": "Air pollution and its impact on stone heritage sites: mechanisms and mathematical models",
+        "pdf_page": 6,
+        "language": "en",
+        "citation": "chunk:cdf31cfc2a8cc60fda6dcb4b"
+      },
+      {
+        "title": "Air pollution and its impact on stone heritage sites: mechanisms and mathematical models",
+        "pdf_page": 11,
+        "language": "en",
+        "citation": "chunk:278326a95c9bd1903cd49c25"
+      },
+      {
+        "title": "Risk management and preventive conservation of historic buildings: The case of Karatay Madrasah (Museum)",
+        "pdf_page": 11,
+        "language": "en",
+        "citation": "chunk:89134fc25eb3a27201cf9861"
+      },
+      {
+        "title": "Risk management and preventive conservation of historic buildings: The case of Karatay Madrasah (Museum)",
+        "pdf_page": 7,
+        "language": "en",
+        "citation": "chunk:f44d9d1fd95eb92ea3aeb14a"
+      },
+      {
+        "title": "Principles for the Analysis, Conservation and Structural Restoration of Architectural Heritage",
+        "pdf_page": 26,
+        "language": "en",
+        "citation": "chunk:64112920cf99646dc5aa3be9"
+      },
+      {
+        "title": "Principles for the Analysis, Conservation and Structural Restoration of Architectural Heritage",
+        "pdf_page": 42,
+        "language": "en",
+        "citation": "chunk:c7a6def1c79e82e0a0a721dd"
+      },
+      {
+        "title": "文物保护利用规范工业遗产",
+        "pdf_page": 11,
+        "language": "zh",
+        "citation": "chunk:5e8f5a44eed5ddcebac5b59c"
+      },
+      {
+        "title": "文物保护项目评估规范",
+        "pdf_page": 7,
+        "language": "zh",
+        "citation": "chunk:8bef0314d6cf5e8374a440bf"
+      }
+    ],
+    "candidate_claims": 1
+  }
+]

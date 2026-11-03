@@ -1,0 +1,16 @@
+{
+  "documents": 48,
+  "pages": 867,
+  "chunks": 2442,
+  "concepts": 44,
+  "mentions": 3771,
+  "sites": 763,
+  "claims": 79,
+  "nodes": 35207,
+  "edges": 44164,
+  "built_at": "2026-11-03T03:31:38.459207+00:00",
+  "workbench_claims_imported": 79,
+  "workbench_claims_rejected": 0,
+  "retrieval": "SQLite FTS5 BM25 + bilingual controlled vocabulary + 1-hop graph expansion",
+  "graph_claim_policy": "Claims are candidates; mentions and routing rules are not treatment evidence."
+}

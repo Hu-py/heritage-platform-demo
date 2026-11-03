@@ -1,0 +1,823 @@
+{
+  "schema_version": "1.0",
+  "description": "Bilingual retrieval ontology. Routing edges are manually defined search aids, not verified treatment claims.",
+  "concepts": [
+    {
+      "id": "concept:authenticity",
+      "kind": "principle",
+      "zh": "真实性",
+      "en": "Authenticity",
+      "aliases": [
+        "真实性",
+        "Authenticity",
+        "authenticity",
+        "真实可信",
+        "原真性"
+      ]
+    },
+    {
+      "id": "concept:integrity",
+      "kind": "principle",
+      "zh": "完整性",
+      "en": "Integrity",
+      "aliases": [
+        "完整性",
+        "Integrity",
+        "integrity",
+        "整体完整"
+      ]
+    },
+    {
+      "id": "concept:minimum_intervention",
+      "kind": "principle",
+      "zh": "最小干预",
+      "en": "Minimum intervention",
+      "aliases": [
+        "最小干预",
+        "Minimum intervention",
+        "minimal intervention",
+        "minimum intervention",
+        "最少干预",
+        "最小限度干预"
+      ]
+    },
+    {
+      "id": "concept:reversibility",
+      "kind": "principle",
+      "zh": "可逆性",
+      "en": "Reversibility",
+      "aliases": [
+        "可逆性",
+        "Reversibility",
+        "reversibility",
+        "reversible",
+        "可逆"
+      ]
+    },
+    {
+      "id": "concept:compatibility",
+      "kind": "principle",
+      "zh": "兼容性",
+      "en": "Compatibility",
+      "aliases": [
+        "兼容性",
+        "Compatibility",
+        "compatibility",
+        "compatible materials",
+        "相容性"
+      ]
+    },
+    {
+      "id": "concept:vibration",
+      "kind": "risk",
+      "zh": "振动",
+      "en": "Vibration",
+      "aliases": [
+        "振动",
+        "Vibration",
+        "vibration",
+        "vibrations",
+        "施工振动",
+        "震动"
+      ]
+    },
+    {
+      "id": "concept:settlement",
+      "kind": "risk",
+      "zh": "沉降",
+      "en": "Settlement",
+      "aliases": [
+        "沉降",
+        "Settlement",
+        "settlement",
+        "subsidence",
+        "differential settlement",
+        "地基变形"
+      ]
+    },
+    {
+      "id": "concept:pollution",
+      "kind": "risk",
+      "zh": "污染",
+      "en": "Pollution",
+      "aliases": [
+        "污染",
+        "Pollution",
+        "pollution",
+        "pollutants",
+        "acid rain",
+        "酸雨"
+      ]
+    },
+    {
+      "id": "concept:structural_damage",
+      "kind": "risk",
+      "zh": "结构病害",
+      "en": "Structural damage",
+      "aliases": [
+        "结构病害",
+        "Structural damage",
+        "structural damage",
+        "structural failure",
+        "cracks",
+        "cracking",
+        "开裂",
+        "裂缝",
+        "结构损伤"
+      ]
+    },
+    {
+      "id": "concept:development",
+      "kind": "risk",
+      "zh": "开发建设影响",
+      "en": "Development pressure",
+      "aliases": [
+        "开发建设影响",
+        "Development pressure",
+        "development pressure",
+        "urban development",
+        "construction activities",
+        "new construction",
+        "development impact",
+        "开发建设",
+        "开发影响",
+        "城市更新",
+        "建设活动",
+        "周边建设"
+      ]
+    },
+    {
+      "id": "concept:moisture",
+      "kind": "risk",
+      "zh": "水湿病害",
+      "en": "Moisture damage",
+      "aliases": [
+        "水湿病害",
+        "Moisture damage",
+        "moisture",
+        "dampness",
+        "water infiltration",
+        "水湿",
+        "潮湿",
+        "渗漏",
+        "渗水"
+      ]
+    },
+    {
+      "id": "concept:fire",
+      "kind": "risk",
+      "zh": "火灾",
+      "en": "Fire",
+      "aliases": [
+        "火灾",
+        "Fire",
+        "fire risk",
+        "fire safety",
+        "fire protection",
+        "消防"
+      ]
+    },
+    {
+      "id": "concept:visitor_pressure",
+      "kind": "risk",
+      "zh": "游客与使用压力",
+      "en": "Visitor pressure",
+      "aliases": [
+        "游客与使用压力",
+        "Visitor pressure",
+        "visitor pressure",
+        "overcrowding",
+        "visitor impact",
+        "tourism pressure",
+        "游客",
+        "拥挤",
+        "人流",
+        "活动利用"
+      ]
+    },
+    {
+      "id": "concept:public_attention",
+      "kind": "risk",
+      "zh": "舆论与公众关注",
+      "en": "Public attention",
+      "aliases": [
+        "舆论与公众关注",
+        "Public attention",
+        "public perception",
+        "public awareness",
+        "public attention",
+        "舆论",
+        "公众认知",
+        "公众关注"
+      ]
+    },
+    {
+      "id": "concept:historic_setting",
+      "kind": "risk",
+      "zh": "历史环境变化",
+      "en": "Historic setting change",
+      "aliases": [
+        "历史环境变化",
+        "Historic setting change",
+        "historic setting",
+        "historical setting",
+        "historic landscape",
+        "历史环境",
+        "历史风貌",
+        "风貌协调"
+      ]
+    },
+    {
+      "id": "concept:repair",
+      "kind": "strategy",
+      "zh": "修缮保护",
+      "en": "Conservation repair",
+      "aliases": [
+        "修缮保护",
+        "Conservation repair",
+        "repair",
+        "repairs",
+        "restoration",
+        "修缮",
+        "维修",
+        "修复"
+      ]
+    },
+    {
+      "id": "concept:development_control",
+      "kind": "strategy",
+      "zh": "建设管控",
+      "en": "Development control",
+      "aliases": [
+        "建设管控",
+        "Development control",
+        "development control",
+        "planning control",
+        "buffer zone",
+        "规划管控",
+        "建设控制地带",
+        "缓冲区"
+      ]
+    },
+    {
+      "id": "concept:adaptive_reuse",
+      "kind": "strategy",
+      "zh": "适应性再利用",
+      "en": "Adaptive reuse",
+      "aliases": [
+        "适应性再利用",
+        "Adaptive reuse",
+        "adaptive reuse",
+        "adaptive re-use",
+        "reuse",
+        "再利用",
+        "活化利用",
+        "功能调整"
+      ]
+    },
+    {
+      "id": "concept:environment_improvement",
+      "kind": "strategy",
+      "zh": "环境整治",
+      "en": "Environmental improvement",
+      "aliases": [
+        "环境整治",
+        "Environmental improvement",
+        "environmental improvement",
+        "environmental remediation",
+        "环境改善"
+      ]
+    },
+    {
+      "id": "concept:preventive_conservation",
+      "kind": "strategy",
+      "zh": "预防性保护",
+      "en": "Preventive conservation",
+      "aliases": [
+        "预防性保护",
+        "Preventive conservation",
+        "preventive conservation",
+        "preventive maintenance",
+        "预防性维护"
+      ]
+    },
+    {
+      "id": "concept:impact_assessment",
+      "kind": "strategy",
+      "zh": "遗产影响评估",
+      "en": "Heritage impact assessment",
+      "aliases": [
+        "遗产影响评估",
+        "Heritage impact assessment",
+        "heritage impact assessment",
+        "impact assessment",
+        "影响评价",
+        "影响评估"
+      ]
+    },
+    {
+      "id": "concept:monitoring",
+      "kind": "measure",
+      "zh": "监测",
+      "en": "Monitoring",
+      "aliases": [
+        "监测",
+        "Monitoring",
+        "monitoring",
+        "监控"
+      ]
+    },
+    {
+      "id": "concept:structural_reinforcement",
+      "kind": "measure",
+      "zh": "结构加固",
+      "en": "Structural strengthening",
+      "aliases": [
+        "结构加固",
+        "Structural strengthening",
+        "strengthening",
+        "reinforcement",
+        "retrofitting",
+        "structural consolidation",
+        "加固",
+        "补强"
+      ]
+    },
+    {
+      "id": "concept:material_repair",
+      "kind": "measure",
+      "zh": "材料修复",
+      "en": "Material repair",
+      "aliases": [
+        "材料修复",
+        "Material repair",
+        "material repair",
+        "mortar",
+        "consolidation",
+        "砂浆",
+        "勾缝",
+        "材料修补"
+      ]
+    },
+    {
+      "id": "concept:maintenance",
+      "kind": "measure",
+      "zh": "日常维护",
+      "en": "Maintenance",
+      "aliases": [
+        "日常维护",
+        "Maintenance",
+        "maintenance",
+        "maintain",
+        "保养",
+        "日常养护"
+      ]
+    },
+    {
+      "id": "concept:drainage",
+      "kind": "measure",
+      "zh": "排水与防潮",
+      "en": "Drainage and damp prevention",
+      "aliases": [
+        "排水与防潮",
+        "Drainage and damp prevention",
+        "drainage",
+        "waterproofing",
+        "排水",
+        "防潮",
+        "防水"
+      ]
+    },
+    {
+      "id": "concept:traffic_control",
+      "kind": "measure",
+      "zh": "交通与施工管理",
+      "en": "Traffic and construction management",
+      "aliases": [
+        "交通与施工管理",
+        "Traffic and construction management",
+        "traffic control",
+        "construction management",
+        "交通管制",
+        "施工管理",
+        "施工控制"
+      ]
+    },
+    {
+      "id": "concept:participation",
+      "kind": "measure",
+      "zh": "公众参与",
+      "en": "Public participation",
+      "aliases": [
+        "公众参与",
+        "Public participation",
+        "public participation",
+        "community participation",
+        "stakeholder engagement",
+        "社区参与",
+        "利益相关者"
+      ]
+    },
+    {
+      "id": "concept:interpretation",
+      "kind": "measure",
+      "zh": "遗产阐释",
+      "en": "Heritage interpretation",
+      "aliases": [
+        "遗产阐释",
+        "Heritage interpretation",
+        "interpretation",
+        "heritage interpretation",
+        "文化阐释",
+        "展示利用"
+      ]
+    },
+    {
+      "id": "concept:documentation",
+      "kind": "measure",
+      "zh": "调查与记录",
+      "en": "Survey and documentation",
+      "aliases": [
+        "调查与记录",
+        "Survey and documentation",
+        "documentation",
+        "documenting",
+        "survey",
+        "recording",
+        "调查",
+        "记录",
+        "建档",
+        "测绘"
+      ]
+    },
+    {
+      "id": "concept:timber",
+      "kind": "material",
+      "zh": "木结构",
+      "en": "Timber",
+      "aliases": [
+        "木结构",
+        "Timber",
+        "timber",
+        "wooden",
+        "wood",
+        "木构",
+        "砖木",
+        "木材"
+      ]
+    },
+    {
+      "id": "concept:masonry",
+      "kind": "material",
+      "zh": "砖石结构",
+      "en": "Masonry",
+      "aliases": [
+        "砖石结构",
+        "Masonry",
+        "masonry",
+        "brick",
+        "stone",
+        "砖石",
+        "砖木",
+        "砖墙",
+        "石材",
+        "石质"
+      ]
+    },
+    {
+      "id": "concept:concrete",
+      "kind": "material",
+      "zh": "混凝土",
+      "en": "Concrete",
+      "aliases": [
+        "混凝土",
+        "Concrete",
+        "concrete",
+        "钢筋混凝土"
+      ]
+    },
+    {
+      "id": "concept:steel",
+      "kind": "material",
+      "zh": "钢结构",
+      "en": "Steel",
+      "aliases": [
+        "钢结构",
+        "Steel",
+        "steel",
+        "钢构"
+      ]
+    },
+    {
+      "id": "concept:industrial",
+      "kind": "building_type",
+      "zh": "工业遗产",
+      "en": "Industrial heritage",
+      "aliases": [
+        "工业遗产",
+        "Industrial heritage",
+        "industrial heritage",
+        "industrial building",
+        "厂房"
+      ]
+    },
+    {
+      "id": "concept:residential",
+      "kind": "building_type",
+      "zh": "历史住宅",
+      "en": "Historic housing",
+      "aliases": [
+        "历史住宅",
+        "Historic housing",
+        "historic housing",
+        "residential",
+        "住宅",
+        "里弄",
+        "民居"
+      ]
+    },
+    {
+      "id": "concept:religious",
+      "kind": "building_type",
+      "zh": "宗教建筑",
+      "en": "Religious building",
+      "aliases": [
+        "宗教建筑",
+        "Religious building",
+        "religious",
+        "church",
+        "temple",
+        "宗教",
+        "教堂",
+        "寺庙"
+      ]
+    },
+    {
+      "id": "concept:cultural_relic",
+      "kind": "legal_status",
+      "zh": "文物建筑与文物保护单位",
+      "en": "Protected cultural relics",
+      "aliases": [
+        "文物建筑与文物保护单位",
+        "Protected cultural relics",
+        "文物建筑",
+        "文物保护单位",
+        "不可移动文物",
+        "cultural relics"
+      ]
+    },
+    {
+      "id": "concept:historic_building",
+      "kind": "legal_status",
+      "zh": "优秀历史建筑",
+      "en": "Listed historic buildings",
+      "aliases": [
+        "优秀历史建筑",
+        "Listed historic buildings",
+        "历史建筑",
+        "listed buildings"
+      ]
+    },
+    {
+      "id": "concept:law",
+      "kind": "regulation",
+      "zh": "法律条款",
+      "en": "Legal provisions",
+      "aliases": [
+        "法律条款",
+        "Legal provisions",
+        "法律",
+        "本法",
+        "应当",
+        "不得",
+        "shall",
+        "must"
+      ]
+    },
+    {
+      "id": "concept:standard",
+      "kind": "regulation",
+      "zh": "标准规范",
+      "en": "Technical standards",
+      "aliases": [
+        "标准规范",
+        "Technical standards",
+        "标准",
+        "规范",
+        "standard",
+        "standards"
+      ]
+    },
+    {
+      "id": "concept:case_study",
+      "kind": "case",
+      "zh": "保护案例",
+      "en": "Conservation case",
+      "aliases": [
+        "保护案例",
+        "Conservation case",
+        "case study",
+        "case studies",
+        "案例",
+        "实践"
+      ]
+    },
+    {
+      "id": "concept:shanghai",
+      "kind": "place",
+      "zh": "上海",
+      "en": "Shanghai",
+      "aliases": [
+        "上海",
+        "Shanghai"
+      ]
+    },
+    {
+      "id": "concept:china",
+      "kind": "place",
+      "zh": "中国",
+      "en": "China",
+      "aliases": [
+        "中国",
+        "China",
+        "Chinese"
+      ]
+    }
+  ],
+  "retrieval_routes": [
+    {
+      "source": "concept:vibration",
+      "target": "concept:monitoring",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:vibration",
+      "target": "concept:traffic_control",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:vibration",
+      "target": "concept:impact_assessment",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:vibration",
+      "target": "concept:structural_damage",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:settlement",
+      "target": "concept:monitoring",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:settlement",
+      "target": "concept:structural_reinforcement",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:settlement",
+      "target": "concept:impact_assessment",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:pollution",
+      "target": "concept:environment_improvement",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:pollution",
+      "target": "concept:material_repair",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:pollution",
+      "target": "concept:preventive_conservation",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:structural_damage",
+      "target": "concept:repair",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:structural_damage",
+      "target": "concept:structural_reinforcement",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:structural_damage",
+      "target": "concept:monitoring",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:development",
+      "target": "concept:development_control",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:development",
+      "target": "concept:impact_assessment",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:development",
+      "target": "concept:historic_setting",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:moisture",
+      "target": "concept:drainage",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:moisture",
+      "target": "concept:maintenance",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:moisture",
+      "target": "concept:material_repair",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:fire",
+      "target": "concept:preventive_conservation",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:fire",
+      "target": "concept:monitoring",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:visitor_pressure",
+      "target": "concept:adaptive_reuse",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:visitor_pressure",
+      "target": "concept:maintenance",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:visitor_pressure",
+      "target": "concept:participation",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:public_attention",
+      "target": "concept:interpretation",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:public_attention",
+      "target": "concept:participation",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:historic_setting",
+      "target": "concept:authenticity",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:historic_setting",
+      "target": "concept:integrity",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    },
+    {
+      "source": "concept:historic_setting",
+      "target": "concept:development_control",
+      "relation": "EXPANDS_QUERY_TO",
+      "status": "retrieval_rule_not_evidence"
+    }
+  ]
+}
