@@ -1,5 +1,11 @@
 let language=localStorage.getItem('heritage-language')==='en'?'en':'zh';
 const translations={
+'建筑集合填充不透明度':'Building-set fill opacity','全市风险范围（按韧性着色）':'Citywide extents by resilience','当前文物精细风险范围':'Selected site risk extent',
+'隐藏文物点':'Hide sites','显示文物点':'Show sites',
+'范围与等级':'Extent & grade','边界线':'Boundaries','建筑集合':'Building sets','基本范围':'Basic extent','风险范围':'Risk extent','同级韧性':'Same resilience','较低韧性':'Lower resilience','韧性等级':'Resilience','全部等级':'All levels','高韧性':'High resilience','中韧性':'Medium resilience','低韧性':'Low resilience','等级重叠':'Overlapping levels','范围重叠取较低韧性':'Overlaps show lower resilience',
+'红：高韧性；黄：中韧性；蓝：低韧性。左下角切换范围':'Red: high; yellow: medium; blue: low resilience. Switch extents at bottom-left.',
+'风险范围按中心文物韧性着色：红高、黄中、蓝低。模型范围不等于法定保护范围。':'Extents use the central site’s resilience: red high, yellow medium, blue low. Not statutory boundaries.',
+
 '规划知识库':'Knowledge',
 '文物遗产韧性与规划响应平台':'Heritage Resilience & Intervention Spatial Knowledge platform',
 '建筑遗产韧性与干预':'Heritage Resilience & Intervention','空间知识平台':'Spatial Knowledge platform','HERISK – 文物遗产韧性与规划响应平台':'HERISK – Heritage Resilience & Intervention Spatial Knowledge platform',
@@ -15,17 +21,20 @@ function translateUI(){
  updateThemeButton();
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let node;
  while(node=walker.nextNode()){
-  if(node.parentElement.closest('script,style,#theme,.brand-slogan,#detail,#headlineScores,#stats,#title,#meta,#list,.leaflet-pane'))continue;
+  if(node.parentElement.closest('script,style,#headerCopyright,#riskTooltip,#theme,.brand-slogan,#detail,#headlineScores,#stats,#title,#meta,#list,.leaflet-pane'))continue;
   let record=originals.get(node);if(!record||node.nodeValue!==record.output)record={source:node.nodeValue};
   const output=language==='en'?translated(record.source):record.source;record.output=output;originals.set(node,record);if(node.nodeValue!==output)node.nodeValue=output;
  }
  document.documentElement.lang=language==='en'?'en':'zh-CN';
+ const copyright=document.getElementById('headerCopyright');
+ if(copyright){const text=language==='en'?'Copyright@Centre for URBAN SCIENCE & PLANNING TONGJI X UCL Sino-UK Joint Lab for Urban AI':'copyright@同济大学城市科学与规划中心 ｜ 中英城市人工智能实验室';if(copyright.textContent!==text)copyright.textContent=text;}
  document.title=language==='en'?'HERISK – Heritage Resilience & Intervention Spatial Knowledge platform':'HERISK – 文物遗产韧性与规划响应平台';
  document.getElementById('search').placeholder=language==='en'?translations['搜索文物名称、地址或编号']:'搜索文物名称、地址或编号';
  document.getElementById('language').textContent=language==='en'?'中文':'English';
- document.querySelectorAll('#riskButtons button').forEach(b=>b.title=language==='en'?'Switch risk layer':'切换风险底板');
+ document.querySelectorAll('#riskButtons button').forEach(b=>b.removeAttribute('title'));
+ if(typeof updateRiskTooltip==='function')updateRiskTooltip();
 }
 const languageObserver=new MutationObserver(()=>{languageObserver.disconnect();translateUI();languageObserver.observe(document.body,{childList:true,subtree:true,characterData:true})});
-document.getElementById('language').onclick=()=>{language=language==='en'?'zh':'en';localStorage.setItem('heritage-language',language);filter();render();translateUI()};
+document.getElementById('language').onclick=()=>{language=language==='en'?'zh':'en';localStorage.setItem('heritage-language',language);filter();render();if(typeof refreshRiskView==='function')refreshRiskView();translateUI()};
 languageObserver.observe(document.body,{childList:true,subtree:true,characterData:true});
 translateUI();
