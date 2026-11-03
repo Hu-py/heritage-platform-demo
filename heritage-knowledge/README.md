@@ -96,3 +96,20 @@ DEEPSEEK_MODEL=deepseek-flash
 - 不同语言的同一文件、案例未做语义级去重；当前只按 PDF 字节哈希去重。
 - 图表、表格、跨页条款可能受解析顺序影响；索引不跨页，跨页论证可能漏检，原 PDF 可用于复核。
 - 公开下载不等于可再分发；PDF、全文缓存、生成数据库默认不进入 GitHub。
+
+### 概念层聚合图谱（2026-11-03）
+
+打开本地 `/knowledge.html`，默认显示概念聚合图谱。支持中英文与别名检索、选择中心概念、一阶／二阶邻域、关系筛选、D3 力导向布局、节点拖拽、缩放和右侧证据溯源。
+
+`concept_graph.py` 在原 SQLite 中增加可重建的 `cg_links`、`cg_evidence`、`cg_meta` 及查询索引，不改写原始建筑评价、PDF、片段和 claims。首次请求构建聚合索引；源库重建、ontology 版本或候选关系变化后自动重建。证据数量按文献与 PDF 物理页去重，分页读取原文，不在图中铺开所有片段。
+
+三种关系独立保存和筛选：
+- 专业候选关系：由原 claims 映射，保留原始实体、关系、引文、条件和待复核状态。精确别名优先；仅有唯一且类型兼容的词面概念时标记为映射候选，歧义或未匹配实体不强行合并。
+- 同段共现：概念在同一 chunks 片段出现，仅用于探索，不代表专业、因果或策略支持关系。
+- 检索扩展：来自 ontology 路由，证据数量为零，不伪造来源。
+
+`GET /api/knowledge/concept-graph?q=施工振动&depth=2&kind=all` 返回概念邻域。可用 `center=concept:vibration` 精确定位；kind 为 all/candidate/cooccurrence/route。图默认最多 32 个邻域节点、最多 90 条连线，优先保留中心连接和可达路径；全库概览保留 44 个概念。`GET /api/knowledge/graph-evidence?id=...&offset=0` 返回文献页码、原文、引用链接及候选关系来源。
+
+`POST /api/knowledge/enrich` 接收 `{ "query": "施工振动" }`，复用原 DeepSeek 抽取器，仅在按钮主动触发后发送最多 3 条检索片段；经过引用校验的结果仍标为候选。未配置密钥时按钮禁用，其他功能不受影响。新增候选若无法映射到概念两端，仍保留于原 claims 数据库供检索。
+
+D3 7.9.0 固定版本及 ISC 许可证保存在 `heritage-platform/public/vendor/`，图谱本身不依赖外部 CDN。验证命令：`python -m unittest discover -s heritage-knowledge/tests -v`。

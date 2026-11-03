@@ -1,0 +1,482 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "report_type": {
+      "const": "heritage_planning_response"
+    },
+    "building": {
+      "type": "object",
+      "properties": {
+        "site_id": {
+          "type": "string"
+        },
+        "building_name": {
+          "type": "string"
+        },
+        "building_type": {
+          "type": "string"
+        },
+        "assessment_date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "site_id",
+        "building_name",
+        "building_type",
+        "assessment_date"
+      ],
+      "additionalProperties": false
+    },
+    "diagnosis": {
+      "type": "object",
+      "properties": {
+        "building_characteristics": {
+          "type": "string"
+        },
+        "intrinsic_vulnerability": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dimension": {
+                "type": "string"
+              },
+              "sub_dimension": {
+                "type": "string"
+              },
+              "score": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "level": {
+                "type": "string"
+              },
+              "finding": {
+                "type": "string"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 50
+              }
+            },
+            "required": [
+              "dimension",
+              "sub_dimension",
+              "score",
+              "level",
+              "finding",
+              "source_refs"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 30
+        },
+        "group_risk": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_type": {
+                "type": "string"
+              },
+              "risk_score": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "spatial_scope_id": {
+                "type": "string"
+              },
+              "spatial_relationship": {
+                "type": "string"
+              },
+              "finding": {
+                "type": "string"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 50
+              }
+            },
+            "required": [
+              "risk_type",
+              "risk_score",
+              "spatial_scope_id",
+              "spatial_relationship",
+              "finding",
+              "source_refs"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 30
+        }
+      },
+      "required": [
+        "building_characteristics",
+        "intrinsic_vulnerability",
+        "group_risk"
+      ],
+      "additionalProperties": false
+    },
+    "identified_problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "problem_id": {
+            "type": "string"
+          },
+          "problem_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "related_indicators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          },
+          "related_risks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "uncertainties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          }
+        },
+        "required": [
+          "problem_id",
+          "problem_name",
+          "description",
+          "related_indicators",
+          "related_risks",
+          "evidence_refs",
+          "confidence",
+          "uncertainties"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 8
+    },
+    "conservation_objectives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "objective_id": {
+            "type": "string"
+          },
+          "objective_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "problem_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          }
+        },
+        "required": [
+          "objective_id",
+          "objective_name",
+          "description",
+          "problem_refs"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 8
+    },
+    "planning_strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "strategy_id": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "strategy_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "objective_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          },
+          "problem_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 50
+          },
+          "priority": {
+            "type": "string"
+          },
+          "measures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "measure_id": {
+                  "type": "string"
+                },
+                "measure_name": {
+                  "type": "string"
+                },
+                "action": {
+                  "type": "string"
+                },
+                "target_object": {
+                  "type": "string"
+                },
+                "spatial_scope": {
+                  "type": "string"
+                },
+                "implementation_conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 50
+                },
+                "expected_effect": {
+                  "type": "string"
+                },
+                "monitoring_requirements": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 50
+                },
+                "evidence_refs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "maxItems": 50
+                }
+              },
+              "required": [
+                "measure_id",
+                "measure_name",
+                "action",
+                "target_object",
+                "spatial_scope",
+                "implementation_conditions",
+                "expected_effect",
+                "monitoring_requirements",
+                "evidence_refs"
+              ],
+              "additionalProperties": false
+            },
+            "maxItems": 5
+          }
+        },
+        "required": [
+          "strategy_id",
+          "category",
+          "strategy_name",
+          "description",
+          "rationale",
+          "objective_refs",
+          "problem_refs",
+          "priority",
+          "measures"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 5
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "document_id": {
+            "type": "string"
+          },
+          "chunk_id": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "page": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "quote": {
+            "type": "string"
+          },
+          "support_type": {
+            "type": "string"
+          },
+          "applicability": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "evidence_id",
+          "document_id",
+          "chunk_id",
+          "source_type",
+          "page",
+          "quote",
+          "support_type",
+          "applicability"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 100
+    },
+    "implementation": {
+      "type": "object",
+      "properties": {
+        "priority_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50
+        },
+        "short_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50
+        },
+        "medium_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50
+        },
+        "long_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 50
+        }
+      },
+      "required": [
+        "priority_actions",
+        "short_term",
+        "medium_term",
+        "long_term"
+      ],
+      "additionalProperties": false
+    },
+    "uncertainties_and_recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "issue": {
+            "type": "string"
+          },
+          "required_verification": {
+            "type": "string"
+          },
+          "responsible_expertise": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "issue",
+          "required_verification",
+          "responsible_expertise"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 30
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "pending"
+        },
+        "requires_expert_review": {
+          "const": true
+        }
+      },
+      "required": [
+        "status",
+        "requires_expert_review"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "report_type",
+    "building",
+    "diagnosis",
+    "identified_problems",
+    "conservation_objectives",
+    "planning_strategies",
+    "evidence",
+    "implementation",
+    "uncertainties_and_recommendations",
+    "review"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

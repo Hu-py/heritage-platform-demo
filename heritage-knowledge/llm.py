@@ -3,7 +3,7 @@ import json, os, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
 from kg import ROOT, connect, validate_claim, insert_claim, digest, normalized
-PROMPT_VERSION='herisk-planning-v1'
+PROMPT_VERSION='herisk-planning-response-1.0'
 
 def load_local_config():
  # Never read unrelated credentials or print values.
@@ -22,11 +22,11 @@ def chat(system,payload):
  if not key:raise ValueError('DEEPSEEK_API_KEY 未配置。请在 heritage-knowledge/.env.local 中设置，勿放入前端或提交 GitHub。')
  base=os.environ.get('DEEPSEEK_BASE_URL','https://api.deepseek.com').rstrip('/')
  if not base.startswith('https://'):raise ValueError('DeepSeek endpoint must use HTTPS')
- body={'model':os.environ.get('DEEPSEEK_MODEL','deepseek-flash'),'messages':[{'role':'system','content':system},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}],'response_format':{'type':'json_object'},'thinking':{'type':'disabled'},'temperature':0,'max_tokens':6000}
+ body={'model':os.environ.get('DEEPSEEK_MODEL','deepseek-flash'),'messages':[{'role':'system','content':system},{'role':'user','content':json.dumps(payload,ensure_ascii=False)}],'response_format':{'type':'json_object'},'thinking':{'type':'disabled'},'temperature':0,'max_tokens':16000}
  req=urllib.request.Request(base+'/chat/completions',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+key},method='POST')
  try:
   with urllib.request.urlopen(req,timeout=120) as response:raw=json.load(response)
- except urllib.error.HTTPError as e:raise RuntimeError('DeepSeek HTTP '+str(e.code)+'；请检查模型、余额或配置。') from None
+ except urllib.error.HTTPError as e:raise RuntimeError('DeepSeek 密钥认证失败，请在本地配置中检查完整密钥。' if e.code==401 else 'DeepSeek HTTP '+str(e.code)+'；请检查模型、余额或配置。') from None
  except urllib.error.URLError:raise RuntimeError('DeepSeek 网络连接失败。') from None
  choice=raw['choices'][0]
  if choice.get('finish_reason')=='length':raise ValueError('Model output truncated; no partial result accepted')
@@ -89,9 +89,5 @@ def validate_plan(payload,evidence):
  return accepted,rejected
 
 def generate(bundle):
- evidence=bundle['retrieval']['results']
- if not evidence:raise ValueError('没有检索到证据，不生成规划策略。')
- payload,model=chat(GENERATION_PROMPT,{'diagnosis':bundle['diagnosis'],'risk':bundle['risk_category'],'evidence':[{'id':x['id'],'text':x['text'],'scope':x['scope'],'quality':x['quality'],'title':x['title'],'page':x['page'],'validity':x['validity']} for x in evidence]})
- accepted,rejected=validate_plan(payload,evidence)
- response={**bundle,'status':'draft_requires_review','model':model,'generated_at':datetime.now(timezone.utc).isoformat(),'planning_response':{'summary':str(payload.get('summary','')),'strategy_candidates':accepted,'evidence_gaps':payload.get('evidence_gaps',[]),'review_required':True},'validation':{'accepted_strategies':len(accepted),'rejected_strategies':rejected,'scope':'Citation identity and quote matching only; human semantic/applicability review still required.'}}
- folder=ROOT/'data/generations';folder.mkdir(exist_ok=True);path=folder/(digest(response)+'.json');path.write_text(json.dumps(response,ensure_ascii=False,indent=2));return response
+ from planning_report import generate_report
+ return generate_report(bundle,chat)
