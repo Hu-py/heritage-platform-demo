@@ -1,5 +1,6 @@
 let language=localStorage.getItem('heritage-language')==='en'?'en':'zh';
 const translations={
+'规划知识库':'Knowledge',
 '文物遗产韧性与规划响应平台':'Heritage Resilience & Intervention Spatial Knowledge platform',
 '建筑遗产韧性与干预':'Heritage Resilience & Intervention','空间知识平台':'Spatial Knowledge platform','HERISK – 文物遗产韧性与规划响应平台':'HERISK – Heritage Resilience & Intervention Spatial Knowledge platform',
 "HERISK 是一个由大语言模型驱动的空间平台，面向人为扰动下的建筑遗产韧性评估。平台从开放文本中提取遗产记录，推断建筑属性，融合专家与地方知识库开展脆弱性评价，模拟五类危害在建筑之间的传播，并自动划定干预分区与全市风险区域。":"HERISK is an LLM-powered spatial platform for built heritage resilience assessment under anthropogenic disturbance. It extracts heritage records from open texts, infers building attributes, evaluates vulnerability via integrated expert and local knowledge bases, simulates cross-building propagation of five hazard types, and automatically delineates intervention zones and city-wide risk areas.",
