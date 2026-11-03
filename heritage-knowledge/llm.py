@@ -3,7 +3,7 @@ import json, os, urllib.request, urllib.error
 from pathlib import Path
 from datetime import datetime, timezone
 from kg import ROOT, connect, validate_claim, insert_claim, digest, normalized
-PROMPT_VERSION='herisk-planning-response-1.0'
+PROMPT_VERSION='herisk-planning-response-2.0-compact-rag'
 
 def load_local_config():
  # Never read unrelated credentials or print values.
@@ -88,6 +88,6 @@ def validate_plan(payload,evidence):
   else:accepted.append(dict(item,status='draft_requires_expert_review',verification='quote_location_only_not_semantic_entailment'))
  return accepted,rejected
 
-def generate(bundle):
+def generate(bundle,report_scope='comprehensive'):
  from planning_report import generate_report
- return generate_report(bundle,chat)
+ return generate_report(bundle,chat,report_scope=report_scope)
